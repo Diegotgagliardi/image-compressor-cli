@@ -36,7 +36,7 @@ def comprimir_imagem(caminho_entrada, caminho_saida, qualidade=75, max_largura=1
 
 def selecionar_pasta():
     root = Tk()
-    root.withdraw()  # Oculta a janela principal
+    root.withdraw()
     pasta = filedialog.askdirectory(title="Selecione a pasta com as imagens")
     return pasta
 
@@ -64,9 +64,9 @@ def comprimir_em_lote(pasta_entrada, qualidade=75):
             comprimir_imagem(caminho_entrada, caminho_saida, qualidade)
 
 
-# === Executa o script ===
+# Qualidade da imagem (75% por padrão) — quanto menor, mais compressão e mais perda de qualidade.
 if __name__ == "__main__":
     pasta_escolhida = selecionar_pasta()
-    qualidade = 75  # entre 60 e 85 para equilibrar qualidade x tamanho
+    qualidade = 75  
 
     comprimir_em_lote(pasta_escolhida, qualidade)
